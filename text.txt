@@ -1,0 +1,6 @@
+x+y
+x+y^z
+x^y^z
+a+b*c
+((a)+b*c)*(d*(e+f)+g)*h
+((a-b)/c*d*e)^f^g
