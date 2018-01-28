@@ -1,7 +1,7 @@
-# ONP
+# RPN
 
 Opis działania:
-Program dokonuje translacji wyrażeń z postaci nawiasowej na ONP; wyrażenia postaci nawiasowej wczytuje z pliku *.txt; wynik w postaci ONP wyświetla w oknie konsoli.
+Program dokonuje translacji wyrażeń z postaci nawiasowej na ONP (ang. RPN); wyrażenia postaci nawiasowej wczytuje z pliku *.txt; wynik w postaci ONP wyświetla w oknie konsoli.
 
 Przykładowe wywołanie programu:
 Translator.exe input.txt
