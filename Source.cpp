@@ -7,7 +7,7 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-	//wczytaj nazwe pliku z danymi do zmiennej input
+	// wczytaj nazwe pliku z danymi do zmiennej input
 	string input = argv[1];
 
 	// zdefiniuj i otworz strumien wejscia dla pliku z notacja nawiasowa
@@ -26,14 +26,14 @@ int main(int argc, char *argv[])
 
 	while(1){
 		//getline()
-		while (1) { // Poki zosta³y symbole do przeczytania wykonuj:
+		while (1) { // Poki zostaÅ‚y symbole do przeczytania wykonuj:
 		// Przeczytaj symbol.
 			ifs >> t;
 			if (ifs.eof()) break;
 
-			if (t > 96 && t < 123) cout << t; // Jeœli symbol jest a-z dodaj go do kolejki wyjœcie.
+			if (t > 96 && t < 123) cout << t; // JeÅ›li symbol jest a-z dodaj go do kolejki wyjÅ›cie
 
-			// Jeœli symbol jest operatorem, o1 wtedy:
+			// JeÅ›li symbol jest operatorem, o1 wtedy:
 			else if (t == '+' || t == '-') { //
 				while ((!(s.empty())) && (s.top() == '+' || s.top() == '-' || s.top() == '*' || s.top() == '/' || s.top() == '^')) {
 					cout << s.top();
@@ -50,28 +50,28 @@ int main(int argc, char *argv[])
 				s.push(t);
 			}
 
-			else if (t == '^') { //  inaczej, bo prawostronnie ³aczny operator to jest
+			else if (t == '^') { //  inaczej - prawostronnie Å‚aczny operator
 				s.push(t);
 			}
 
-			else if (t == '(') { // Je¿eli symbol jest lewym nawiasem to w³ó¿ go na stos.
+			else if (t == '(') { // JeÅ¼eli symbol jest lewym nawiasem to wÅ‚Ã³Å¼ go na stos.
 				s.push(t);
 			}
 
-			else if (t == ')') {// Je¿eli symbol jest prawym nawiasem
-			// nie sprawdzam czy stos jest pusty - jesli jest pusty tzn. ze plik wejsciowy jest bledny, a z zal. jego zawartoœæ jest prawidlowa
-				while (s.top() != '(') { // zdejmuj operatory ze stosu i dok³adaj je do kolejki wyjœcie, dopóki symbol na górze stosu nie jest lewym nawiasem
+			else if (t == ')') {// JeÅ¼eli symbol jest prawym nawiasem
+			// nie sprawdzam czy stos jest pusty, zakladam ze nie jest
+				while (s.top() != '(') { // zdejmuj operatory ze stosu i dokÅ‚adaj je do kolejki wyjÅ›cie, dopÃ³ki symbol na gÃ³rze stosu nie jest lewym nawiasem
 					cout << s.top();
 					s.pop();
 				}
-				// symbol na górze stosu jest lewym nawiasem
-				s.pop(); // zdejmij lewy nawias ze stosu bez dok³adania go do kolejki wyjœcie
+				// symbol na gÃ³rze stosu jest lewym nawiasem
+				s.pop(); // zdejmij lewy nawias ze stosu bez dokÅ‚adania go do kolejki wyjÅ›cie
 			}
 
 			if (ifs.peek() == '\n' || ifs.eof()) break; //na koncu kazdego wersu trzeba wyczyscic stos
 		}
 
-		//zdejmin reszte operatorów ze stosu jeœli ten jest niepusty
+		//zdejmij reszte operatorÃ³w ze stosu jeÅ›li ten jest niepusty
 		while (!(s.empty())) {
 			cout << s.top();
 			s.pop();
